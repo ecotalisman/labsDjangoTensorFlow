@@ -1,16 +1,31 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
 <fieldset>
     <legend><h1>{{ question.question_text }}</h1></legend>
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <div class="container">  <!-- This div wraps the choices -->
     {% for choice in question.choice_set.all %}
-        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+        <div class="choice {% if not choice.image %}choice-without-image{% endif %}">  <!-- This div wraps each choice and its image -->
+            <div></div> <!-- This is the empty space -->
+            <div>
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+            </div>
+            <div>
+                {% if choice.image %}
+                <img class="poll-option-image" src="{{ choice.image.url }}" alt="{{ choice.choice_text }}">
+                {% endif %}
+            </div>
+            <div></div> <!-- This is the empty space -->
+        </div>
     {% endfor %}
+    </div>
 </fieldset>
 <input type="submit" value="Vote">
 </form>
-
 
 <!-- Add this button -->
 <form action="{% url 'polls:results' question.id %}">

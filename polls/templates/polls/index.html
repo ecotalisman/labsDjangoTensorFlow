@@ -1,13 +1,26 @@
 {% load static %}
-
 <link rel="stylesheet" href="{% static 'polls/style.css' %}">
 
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<h1>Опитування:</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            {% if latest_question_list %}
+                {% for question in latest_question_list %}
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <p>{{ forloop.counter }}. <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></p>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No polls are available.</p>
+            {% endif %}
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
