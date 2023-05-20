@@ -1,7 +1,7 @@
-# Designing Intelligent Information Systems - Lecturer: Katin P.Y. (National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute", Kyiv, Ukraine)
+## Designing Intelligent Information Systems - Lecturer: Katin P.Y. (National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute", Kyiv, Ukraine)
 
-## Task for beginners. It is based on Python programming language technologies.
-### 1.1 Create a prototype of a web application based on the Django framework. To do this, perform the following steps:
+### Task for beginners. It is based on Python programming language technologies.
+#### 1.1 Create a prototype of a web application based on the Django framework. To do this, perform the following steps:
 - Go to the site https://www.djangoproject.com/start/.
 - Install the Django framework https://docs.djangoproject.com/en/4.1/intro/install/. The choice of IDE, platform, operating system depends entirely on the choice of the student.
 - Go to the tutorial material for creating a simple project based on Django. Perform steps: 
@@ -15,9 +15,9 @@ After successfully performing steps 01-04, a web application should be created t
 - a database, two tables in the database, by default the SQLight 3 database, you can choose your own database;
 - functionality in the form of a voting system, we add questions and vote for them.
 
-### 1.2 Based on the results of p.1.1, we add our own functionality, for example, displaying images, the level of complexity is low.
+#### 1.2 Based on the results of p.1.1, we add our own functionality, for example, displaying images, the level of complexity is low.
 
-### 1.3 Preparing a web application to work with elements of artificial intelligence.
+#### 1.3 Preparing a web application to work with elements of artificial intelligence.
 - Go to the site https://www.tensorflow.org/?hl=en. We get acquainted.
 - Go to the tutorial literature and manuals https://www.tensorflow.org/tutorials?hl=en. For beginners https://www.tensorflow.org/tutorials/quickstart/beginner?hl=en. For the prepared https://www.tensorflow.org/tutorials/quickstart/advanced?hl=ru.
 - Integrate the library into the web application obtained in step 1.1 and make a demo system.
@@ -25,12 +25,12 @@ After successfully performing steps 01-04, a web application should be created t
 
 Most of the beginners' work is successfully performed according to this scheme!
 
-## Task for experienced in web development. Based on the results obtained by hand or on the results of laboratory work or projects.
-### 1.1 Launch and test a prototype of a web application based on successful laboratory work or professional activity.
+### Task for experienced in web development. Based on the results obtained by hand or on the results of laboratory work or projects.
+#### 1.1 Launch and test a prototype of a web application based on successful laboratory work or professional activity.
 
-### 1.2 Independently find a demo version of a neural network based on the technologies on which p.1.1 is performed.
+#### 1.2 Independently find a demo version of a neural network based on the technologies on which p.1.1 is performed.
 
-### 1.3 Embed into the web application obtained in p.1.1. the neural network, which is defined in p.1.2. We integrate the library (technology) and test the result.
+#### 1.3 Embed into the web application obtained in p.1.1. the neural network, which is defined in p.1.2. We integrate the library (technology) and test the result.
 
 If you do not very perfectly know the technology of p.1.1 it is better to do task 1, for beginners!
 
