@@ -10,3 +10,9 @@
 </fieldset>
 <input type="submit" value="Vote">
 </form>
+
+
+<!-- Add this button -->
+<form action="{% url 'polls:results' question.id %}">
+    <input type="submit" value="View results">
+</form>
