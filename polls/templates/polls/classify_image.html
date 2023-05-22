@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+
+<h1>Завантажити зображення</h1>
+
+<form method="POST" enctype="multipart/form-data" action="{% url 'polls:classify_image' %}">
+    {% csrf_token %}
+    <input type="file" name="image">
+    <input type="submit" value="Classify Image">
+</form>
+<br>
+<form action="{% url 'polls:index' %}">
+    <input type="submit" value="Back to polls">
+</form>
+
+<script>
+document.querySelector('form').addEventListener('submit', function(event) {
+    const fileInput = document.querySelector('input[type="file"]');
+    if (fileInput.files.length === 0) {
+        alert('Будь ласка, виберіть зображення');
+        event.preventDefault(); // Запобігаємо відправці форми
+    }
+});
+</script>

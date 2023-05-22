@@ -1,10 +1,22 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
 from .models import Choice, Question
+
+from .tensorflow_utils import predict
+
+
+def classify_image(request):
+    if request.method == 'POST':
+        image = request.FILES['image']
+        prediction = predict(image)
+        return JsonResponse({'prediction': prediction})
+    else:
+        return render(request, 'polls/classify_image.html')
+
 
 
 class IndexView(generic.ListView):
